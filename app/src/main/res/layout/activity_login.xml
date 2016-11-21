@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/bg_login"
+    android:padding="16dp"
+    tools:context="com.desafiolatam.desafioface.LoginActivity">
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:src="@mipmap/logo"
+        android:layout_marginTop="56dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/lodingLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/emailHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/passwordHolder"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="56dp"
+        android:hint="email"
+        android:theme="@style/WhiteAccent">
+
+        <EditText
+            android:id="@+id/emailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:padding="12dp" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/passwordHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/loginBtn"
+        android:hint="contraseña"
+        android:theme="@style/WhiteAccent">
+
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:padding="12dp" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="54dp"
+        android:layout_marginTop="34dp"
+        android:padding="12dp"
+        android:text="Iniciar Sesión"
+        android:theme="@style/PrimaryDarkerButton" />
+
+m    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/loginLoading"
+        style="@style/SpinKitView.Large.CubeGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:SpinKit_Color="@android:color/white" />
+
+
+</RelativeLayout>
