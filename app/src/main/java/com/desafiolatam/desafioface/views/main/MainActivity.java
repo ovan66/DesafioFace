@@ -3,6 +3,8 @@ package com.desafiolatam.desafioface.views.main;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.desafiolatam.desafioface.R;
+import com.desafiolatam.desafioface.adapters.SectionsPagesAdapter;
+import com.desafiolatam.desafioface.views.Main2Activity;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -30,6 +34,14 @@ public class MainActivity extends AppCompatActivity{
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+        SectionsPagesAdapter mSectionsPagerAdapter = new SectionsPagesAdapter(getSupportFragmentManager());
+
+        // Set up the ViewPager with the sections adapter.
+        ViewPager mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
     }
 
     @Override
