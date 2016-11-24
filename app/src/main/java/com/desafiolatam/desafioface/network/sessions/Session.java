@@ -1,6 +1,6 @@
 package com.desafiolatam.desafioface.network.sessions;
 
-import com.desafiolatam.desafioface.model.UserInfo;
+import com.desafiolatam.desafioface.models.UserInfo;
 
 import retrofit2.Call;
 import retrofit2.http.Field;

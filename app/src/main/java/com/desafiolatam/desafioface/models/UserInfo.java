@@ -1,10 +1,12 @@
-package com.desafiolatam.desafioface.model;
+package com.desafiolatam.desafioface.models;
+
+import com.orm.SugarRecord;
 
 /**
  * Created by santo_000 on 18-11-2016.
  */
 
-public class UserInfo {
+public class UserInfo extends BaseSugar{
 
     private String email, name, auth_token, photo_url;
 

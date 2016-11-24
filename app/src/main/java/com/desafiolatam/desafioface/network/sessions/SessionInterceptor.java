@@ -1,6 +1,6 @@
 package com.desafiolatam.desafioface.network.sessions;
 
-import com.desafiolatam.desafioface.network.constants;
+import com.desafiolatam.desafioface.network.Constants;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -13,7 +13,7 @@ public class SessionInterceptor {
 
     public Session getInterceptor (){
         Retrofit interceptor = new Retrofit.Builder()
-                .baseUrl(constants.ENDPOINT)
+                .baseUrl(Constants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         Session login = interceptor.create(Session.class);
