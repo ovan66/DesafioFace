@@ -35,6 +35,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="WhiteButton" parent="AppTheme">
+        <item name="colorButtonNormal">@android:color/white</item>
+    </style>
+
     <style name="PrimaryDarkerButton" parent="AppTheme">
         <item name="android:textColor">@android:color/white</item>
         <item name="colorButtonNormal">@color/colorPrimaryDarker</item>

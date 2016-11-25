@@ -2,6 +2,7 @@ package com.desafiolatam.desafioface.data;
 
 import com.desafiolatam.desafioface.models.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,5 +18,13 @@ public class UserData {
                 user.create();
             }
         }
+    }
+
+    public List<User> all(){
+        List<User> users = new ArrayList<>();
+        List<User> userList = User.listAll(User.class);
+        if (userList != null && userList.size() > 0){
+            users.addAll(userList);
+        }return users;
     }
 }
