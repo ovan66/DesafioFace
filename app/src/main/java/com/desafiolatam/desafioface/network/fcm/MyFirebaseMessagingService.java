@@ -12,6 +12,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        super.onMessageReceived(remoteMessage);
+        String email = remoteMessage.getData().get("email");
+        new FavoriteNotification().notify(this,email);
     }
 }

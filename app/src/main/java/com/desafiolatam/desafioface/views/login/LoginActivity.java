@@ -14,9 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.desafiolatam.desafioface.R;
+import com.desafiolatam.desafioface.data.Token;
 import com.desafiolatam.desafioface.data.UserInfoData;
 import com.desafiolatam.desafioface.models.UserInfo;
 import com.desafiolatam.desafioface.network.Constants;
+import com.desafiolatam.desafioface.network.fcm.BackgroundToken;
 import com.desafiolatam.desafioface.network.gets.LoginService;
 import com.desafiolatam.desafioface.views.main.MainActivity;
 import com.github.ybq.android.spinkit.SpinKitView;
@@ -106,6 +108,10 @@ public class LoginActivity extends AppCompatActivity implements LoginCallback {
     @Override
     public void success() {
         hideViews();
+        String token = new Token(this).get();
+        if (token != null) {
+            new BackgroundToken().execute(token);
+        }
         LoginService.startActionDownload(this);
 
     }

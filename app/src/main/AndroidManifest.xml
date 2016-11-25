@@ -3,6 +3,7 @@
     package="com.desafiolatam.desafioface">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name="com.orm.SugarApp"
@@ -40,22 +41,16 @@
         <service
             android:name=".network.gets.LoginService"
             android:exported="false" />
-
-        <service
-            android:name="com.desafiolatam.desafioface.network.fcm.MyFirebaseMessagingService">
+        <service android:name=".network.fcm.MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-        <service
-            android:name="com.desafiolatam.desafioface.network.fcm.MyFirebaseInstanceIDService">
+        <service android:name=".network.fcm.MyFirebaseInstanceIDService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
-
     </application>
 
 </manifest>
